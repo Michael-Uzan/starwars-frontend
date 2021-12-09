@@ -28,10 +28,10 @@ export const MovieDetails = ({ match, loadMovies }: any) => {
     if (!movie) return <Loading />
 
     return (
-        <section className="movie-details">
-            <LikeButton isLike={movie.isFavorite} onLikeClick={onLikeClick} />
+        <section className="movie-details tac">
+            <h1>{movie.title}</h1>
             <img src={movie.img} />
-            <h2>{movie.title}</h2>
+            <LikeButton isLike={movie.isFavorite} onLikeClick={onLikeClick} />
             <h3>Director: {movie.director}</h3>
             <h4>Release Date: {movie.releaseDate}</h4>
             <p>{movie.details}</p>

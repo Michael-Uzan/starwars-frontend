@@ -1,4 +1,10 @@
-.main-app{
-    margin-bottom: 350px;
-    text-align: center;
+.main-app {
+    .main-content {
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        gap: 15px;
+        aside {
+            grid-column: 1/2;
+        }
+    }
 }

@@ -21,7 +21,10 @@
 @import "cmps/loading";
 @import "cmps/userMsg";
 @import "cmps/sideBar";
+@import "cmps/moviePreview";
+@import "cmps/likeButton";
 
 // Views (pages)
 @import "pages/mainApp";
+@import "pages/movieDetails";
 @import "pages/about";

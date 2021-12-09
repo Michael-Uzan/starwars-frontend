@@ -11,11 +11,11 @@ interface PropType {
 export const SideBar = ({ movies }: PropType) => {
 
     if (!movies) return <Loading />
-    if (!movies.length) return (<div>Sorry no results...</div>)
 
     return (
         <aside className="side-bar">
             <MovieList movies={movies} />
+            {!movies.length && <div>Sorry no results...</div>}
         </aside>
     )
 }

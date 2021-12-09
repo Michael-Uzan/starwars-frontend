@@ -32,12 +32,12 @@ function App() {
   }
 
   return (
-    <div className="main-container">
+    <div className="main-app main-container">
       <Router>
         <UserMsg />
         <AppHeader onChangeFilter={onChangeFilter} />
-        <SideBar movies={movies} />
-        <main >
+        <main className='main-content' >
+          <SideBar movies={movies} />
           <Switch>
             <Route path='/movie/:movieId'
               render={(props) => (

@@ -1,0 +1,14 @@
+.movie-preview {
+    margin-bottom: 15px;
+    a {
+        .active {
+            color: $clr3;
+        }
+        display: flex;
+        justify-content: space-between;
+        img {
+            width: 25px;
+            object-fit: contain;
+        }
+    }
+}

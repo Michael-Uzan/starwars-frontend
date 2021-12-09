@@ -17,7 +17,7 @@ export const LikeButton = ({ onLikeClick, isLike }: PropType) => {
     return (
         <section className="like-button">
             <button onClick={() => onLikeClick()}>
-                <img src={getIsLiked()} />
+                <img className='heart' src={getIsLiked()} />
             </button>
         </section>
     )

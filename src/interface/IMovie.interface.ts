@@ -4,6 +4,7 @@ export default interface IMovie {
     title: string,
     director: string,
     releaseDate: string,
-    details: string
+    details: string,
+    img: string
 }
 

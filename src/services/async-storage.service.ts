@@ -1,5 +1,4 @@
-import IPokemon from "../interface/IPokemon.interface"
-
+import IMovie from "../interface/IMovie.interface"
 export const storageService = {
     query,
     get,
@@ -13,17 +12,17 @@ async function query(entityType: string, delay = 1100): Promise<any> {
     return new Promise((resolve) => setTimeout(resolve, delay, entities))
 }
 
-async function get(entityId: number, entityType: string): Promise<IPokemon> {
+async function get(entityId: string, entityType: string): Promise<IMovie> {
     const entities = await query(entityType)
-    const entity = entities.find((entity: any) => entity.id === entityId)
+    const entity = entities.find((entity: any) => entity._id === entityId)
     if (!entity) throw new Error(`Cannot get, Item ${entityId} of type: ${entityType} does not exist`)
     return entity;
 }
 
-async function post(newEntity: any, entityType: string): Promise<IPokemon> {
+async function post(newEntity: any, entityType: string): Promise<IMovie> {
     newEntity = {
         ...newEntity,
-        id: _makeId()
+        _id: _makeId()
     }
     const entities = await query(entityType)
     entities.push(newEntity)
@@ -31,9 +30,9 @@ async function post(newEntity: any, entityType: string): Promise<IPokemon> {
     return newEntity
 }
 
-async function put(updatedEntity: any, entityType: string): Promise<IPokemon> {
+async function put(updatedEntity: any, entityType: string): Promise<IMovie> {
     const entities = await query(entityType)
-    const idx = entities.findIndex((entity: any) => entity.id === updatedEntity.id)
+    const idx = entities.findIndex((entity: any) => entity._id === updatedEntity._id)
     if (idx < 0) { throw new Error(`Cannot update item, id "${updatedEntity.id}" was not found `) }
     entities[idx] = updatedEntity
     _save(entities, entityType)
@@ -42,7 +41,7 @@ async function put(updatedEntity: any, entityType: string): Promise<IPokemon> {
 
 async function remove(entityId: number, entityType: string): Promise<boolean> {
     const entities = await query(entityType)
-    const idx = entities.findIndex((entity: any) => entity.id === entityId)
+    const idx = entities.findIndex((entity: any) => entity._id === entityId)
     if (idx !== -1) entities.splice(idx, 1)
     else throw new Error(`Cannot remove, item id "${entityId}"" of type: ${entityType} does not exist`)
     _save(entities, entityType)
@@ -50,7 +49,7 @@ async function remove(entityId: number, entityType: string): Promise<boolean> {
 }
 
 
-function _save(entities: IPokemon[], entityType: string) {
+function _save(entities: IMovie[], entityType: string) {
     localStorage.setItem(entityType, JSON.stringify(entities))
 }
 

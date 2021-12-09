@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { FilmList } from '../cmp/FilmList';
-import { Loading } from '../cmp/Loading';
-import { starwarsService } from '../services/starwars.service'
+import { starwarsService } from '../services/starwars.service';
+import { FilmList } from './FilmList';
+import { Loading } from './Loading';
 
-export const FilmsApp = () => {
+export const SideBar = () => {
 
     const [movies, setMovies] = useState<any>(null);
 
@@ -19,8 +19,8 @@ export const FilmsApp = () => {
     if (!movies) return <Loading />
 
     return (
-        <section className="films-app">
+        <aside className="side-bar">
             <FilmList movies={movies} />
-        </section>
+        </aside>
     )
 }

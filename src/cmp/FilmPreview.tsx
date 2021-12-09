@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import IMovie from '../interface/IMovie.interface'
 
 
@@ -9,10 +10,7 @@ interface PropType {
 export const FilmPreview = ({ movie }: PropType) => {
     return (
         <section className="film-preview">
-            <h2>{movie.title}</h2>
-            <h3>{movie.director}</h3>
-            <h4>{movie.releaseDate}</h4>
-            <p>{movie.details}</p>
+            <NavLink activeClassName="active" exact to={`/movie/${movie._id}`}>{movie.title}</NavLink>
         </section>
     )
 }

@@ -8,7 +8,8 @@ import { utilService } from './util.service';
 
 export const starwarsService = {
     getMovies,
-    getById
+    getById,
+    updateMovie
 }
 
 const STARWARS_DB: string = 'starwarsDB';
@@ -58,4 +59,9 @@ function _getImg(title: string): string {
 async function getById(movieId: string): Promise<IMovie> {
     const movie = await storageService.get(movieId, STARWARS_DB)
     return movie
+}
+
+async function updateMovie(movie: IMovie): Promise<IMovie> {
+    const updatedMovie = await storageService.put(movie, STARWARS_DB)
+    return updatedMovie
 }

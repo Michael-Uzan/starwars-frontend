@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Loading } from '../cmp/Loading';
 import { starwarsService } from '../services/starwars.service';
+import like from '../assets/imgs/like.jpg'
+import { LikeButton } from '../cmp/LikeButton';
 
 export const MovieDetails = ({ match }: any) => {
 
@@ -16,10 +18,18 @@ export const MovieDetails = ({ match }: any) => {
         setMovie(movie)
     };
 
+    const onLikeClick = async () => {
+        const newMovie = JSON.parse(JSON.stringify(movie))
+        newMovie.isFavorite = !newMovie.isFavorite
+        const updatedMovie = await starwarsService.updateMovie(newMovie)
+        setMovie(updatedMovie)
+    }
+
     if (!movie) return <Loading />
 
     return (
         <section className="movie-details">
+            <LikeButton isLike={movie.isFavorite} onLikeClick={onLikeClick} />
             <img src={movie.img} />
             <h2>{movie.title}</h2>
             <h3>{movie.director}</h3>

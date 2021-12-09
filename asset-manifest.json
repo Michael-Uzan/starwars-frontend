@@ -1,24 +1,26 @@
 {
   "files": {
-    "main.css": "/starwars-frontend/static/css/main.e8c2e150.chunk.css",
-    "main.js": "/starwars-frontend/static/js/main.5d01421f.chunk.js",
-    "main.js.map": "/starwars-frontend/static/js/main.5d01421f.chunk.js.map",
-    "runtime-main.js": "/starwars-frontend/static/js/runtime-main.f6890029.js",
-    "runtime-main.js.map": "/starwars-frontend/static/js/runtime-main.f6890029.js.map",
-    "static/js/2.926df8da.chunk.js": "/starwars-frontend/static/js/2.926df8da.chunk.js",
-    "static/js/2.926df8da.chunk.js.map": "/starwars-frontend/static/js/2.926df8da.chunk.js.map",
-    "static/js/3.e79e805e.chunk.js": "/starwars-frontend/static/js/3.e79e805e.chunk.js",
-    "static/js/3.e79e805e.chunk.js.map": "/starwars-frontend/static/js/3.e79e805e.chunk.js.map",
+    "main.css": "/starwars-frontend/static/css/main.ef08d9c0.chunk.css",
+    "main.js": "/starwars-frontend/static/js/main.1e730afe.chunk.js",
+    "main.js.map": "/starwars-frontend/static/js/main.1e730afe.chunk.js.map",
+    "runtime-main.js": "/starwars-frontend/static/js/runtime-main.fa40c0dc.js",
+    "runtime-main.js.map": "/starwars-frontend/static/js/runtime-main.fa40c0dc.js.map",
+    "static/js/2.8fe13b96.chunk.js": "/starwars-frontend/static/js/2.8fe13b96.chunk.js",
+    "static/js/2.8fe13b96.chunk.js.map": "/starwars-frontend/static/js/2.8fe13b96.chunk.js.map",
+    "static/js/3.c4453b4c.chunk.js": "/starwars-frontend/static/js/3.c4453b4c.chunk.js",
+    "static/js/3.c4453b4c.chunk.js.map": "/starwars-frontend/static/js/3.c4453b4c.chunk.js.map",
     "index.html": "/starwars-frontend/index.html",
-    "static/css/main.e8c2e150.chunk.css.map": "/starwars-frontend/static/css/main.e8c2e150.chunk.css.map",
-    "static/js/2.926df8da.chunk.js.LICENSE.txt": "/starwars-frontend/static/js/2.926df8da.chunk.js.LICENSE.txt",
+    "static/css/main.ef08d9c0.chunk.css.map": "/starwars-frontend/static/css/main.ef08d9c0.chunk.css.map",
+    "static/js/2.8fe13b96.chunk.js.LICENSE.txt": "/starwars-frontend/static/js/2.8fe13b96.chunk.js.LICENSE.txt",
     "static/media/main.scss": "/starwars-frontend/static/media/SourceSansPro-Black.d286fd54.ttf",
-    "static/media/bars-loader.8e56973c.svg": "/starwars-frontend/static/media/bars-loader.8e56973c.svg"
+    "static/media/bars-loader.8e56973c.svg": "/starwars-frontend/static/media/bars-loader.8e56973c.svg",
+    "static/media/github-logo.27e6971f.png": "/starwars-frontend/static/media/github-logo.27e6971f.png",
+    "static/media/like-on.e0e9358b.png": "/starwars-frontend/static/media/like-on.e0e9358b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.f6890029.js",
-    "static/js/2.926df8da.chunk.js",
-    "static/css/main.e8c2e150.chunk.css",
-    "static/js/main.5d01421f.chunk.js"
+    "static/js/runtime-main.fa40c0dc.js",
+    "static/js/2.8fe13b96.chunk.js",
+    "static/css/main.ef08d9c0.chunk.css",
+    "static/js/main.1e730afe.chunk.js"
   ]
 }

@@ -7,7 +7,7 @@ export const storageService = {
     remove,
 }
 
-async function query(entityType: string, delay = 800): Promise<any> {
+async function query(entityType: string, delay = 200): Promise<any> {
     const entities = JSON.parse(localStorage.getItem(entityType) || 'null')
     return new Promise((resolve) => setTimeout(resolve, delay, entities))
 }

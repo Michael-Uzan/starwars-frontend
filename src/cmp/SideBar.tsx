@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import IMovie from '../interface/IMovie.interface';
 import { starwarsService } from '../services/starwars.service';
-import { FilmList } from './FilmList';
+import { MovieList } from './MovieList';
 import { Loading } from './Loading';
 
 interface PropType {
@@ -11,10 +11,11 @@ interface PropType {
 export const SideBar = ({ movies }: PropType) => {
 
     if (!movies) return <Loading />
+    if (!movies.length) return (<div>Sorry no results...</div>)
 
     return (
         <aside className="side-bar">
-            <FilmList movies={movies} />
+            <MovieList movies={movies} />
         </aside>
     )
 }

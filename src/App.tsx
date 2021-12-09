@@ -5,7 +5,8 @@ import { AppHeader } from './cmp/AppHeader';
 import { SideBar } from './cmp/SideBar';
 import { UserMsg } from './cmp/UserMsg';
 import IFilter from './interface/IFilter.interface';
-import routes from './routes/routes';
+import { MovieDetails } from './pages/MovieDetails';
+import { eventBusService } from './services/event-bus.service';
 import { starwarsService } from './services/starwars.service';
 
 function App() {
@@ -14,7 +15,9 @@ function App() {
   const [filterBy, setFilterBy] = useState<any>(null);
 
   useEffect(() => {
+    eventBusService.showSuccessMsg('Welcome!!!')
     loadMovies()
+    console.log('init')
   }, [])
 
   const loadMovies = async () => {
@@ -36,7 +39,11 @@ function App() {
         <SideBar movies={movies} />
         <main >
           <Switch>
-            {routes.map(route => <Route key={route.path} component={route.component} path={route.path} />)}
+            <Route path='/movie/:movieId'
+              render={(props) => (
+                <MovieDetails {...props} loadMovies={loadMovies} authed={true} />
+              )}
+            />
           </Switch>
         </main>
         <AppFotter />

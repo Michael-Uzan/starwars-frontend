@@ -3,7 +3,7 @@ import { Loading } from '../cmp/Loading';
 import { starwarsService } from '../services/starwars.service';
 import { LikeButton } from '../cmp/LikeButton';
 
-export const MovieDetails = ({ match }: any) => {
+export const MovieDetails = ({ match, loadMovies }: any) => {
 
     const [movie, setMovie] = useState<any>(null);
 
@@ -22,6 +22,7 @@ export const MovieDetails = ({ match }: any) => {
         newMovie.isFavorite = !newMovie.isFavorite
         const updatedMovie = await starwarsService.updateMovie(newMovie)
         setMovie(updatedMovie)
+        loadMovies()
     }
 
     if (!movie) return <Loading />

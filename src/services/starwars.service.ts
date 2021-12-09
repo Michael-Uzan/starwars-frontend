@@ -3,7 +3,6 @@ import axios from 'axios'
 import IFilter from '../interface/IFilter.interface';
 import IMovie from '../interface/IMovie.interface';
 import { storageService } from './async-storage.service';
-import { httpService } from './http.service';
 import { localStorageService } from './storageService';
 import { utilService } from './util.service';
 

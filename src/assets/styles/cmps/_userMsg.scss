@@ -1,11 +1,12 @@
 .user-msg {
     z-index: 10;
     color: $fontColor;
-    padding: 10px;
-    font-size: rem(17px);
+    padding: 30px;
+    font-size: rem(22px);
     position: fixed;
     top: 30px;
-    left: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: $bgcColor;
     .txt-msg svg {
         margin-right: 30px;
@@ -17,14 +18,14 @@
         margin: 10px;
         color: $fontColor;
         &:hover {
-            background-color: $clr11;
+            background-color: $clr2;
         }
     }
 
-        &.success {
-            border: 8px solid rgb(41, 189, 73);
-        }
-        &.danger {
-            border: 8px solid rgb(216, 59, 59);
-        }
+    &.success {
+        border: 1px solid $clr1;
+    }
+    &.danger {
+        border: 1px solid $clr1;
+    }
 }

@@ -1,6 +1,17 @@
 .main-header {
     margin-bottom: 25px;
-    background-color: $clr6;
+    background-color: $clr2;
+    .top-header {
+        background-color: $bgcColor;
+        margin-bottom: 10px;
+        img {
+            margin-left: 25px;
+        }
+    }
+    form {
+        margin-left: 25px;
+        margin-bottom: 10px;
+    }
     nav {
         gap: 10px;
         padding: 15px;

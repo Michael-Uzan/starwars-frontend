@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import IMovie from '../interface/IMovie.interface';
 import { starwarsService } from '../services/starwars.service';
 import { FilmList } from './FilmList';
 import { Loading } from './Loading';
 
-export const SideBar = () => {
+interface PropType {
+    movies: IMovie[] | null
+}
 
-    const [movies, setMovies] = useState<any>(null);
-
-    useEffect(() => {
-        loadMovies()
-    }, [])
-
-    const loadMovies = async () => {
-        const movies = await starwarsService.getMovies()
-        setMovies(movies)
-    }
+export const SideBar = ({ movies }: PropType) => {
 
     if (!movies) return <Loading />
 

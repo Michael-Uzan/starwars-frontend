@@ -1,5 +1,6 @@
 'use strict'
 import axios from 'axios'
+import IFilter from '../interface/IFilter.interface';
 import IMovie from '../interface/IMovie.interface';
 import { storageService } from './async-storage.service';
 import { httpService } from './http.service';
@@ -15,9 +16,19 @@ export const starwarsService = {
 const STARWARS_DB: string = 'starwarsDB';
 const STARWARS_API: string = 'https://swapi.dev/api/films/'
 
-async function getMovies(): Promise<IMovie[]> {
+async function getMovies(filterBy: IFilter): Promise<IMovie[]> {
     const movies = await storageService.query(STARWARS_DB) || await _getMoviesAPI()
-    return movies
+    let moviesToShow = JSON.parse(JSON.stringify(movies))
+    console.log('filterBy', filterBy)
+    if (filterBy) {
+        const { isFavorite, txt } = filterBy
+        const regex = new RegExp(txt, "i");
+        moviesToShow = moviesToShow.filter((movie: IMovie) => {
+            return (regex.test(movie.title)
+                && (isFavorite ? movie.isFavorite : true))
+        })
+    }
+    return moviesToShow
 }
 
 async function _getMoviesAPI(): Promise<IMovie[]> {

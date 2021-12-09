@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Loading } from '../cmp/Loading';
 import { starwarsService } from '../services/starwars.service';
-import like from '../assets/imgs/like.jpg'
 import { LikeButton } from '../cmp/LikeButton';
 
 export const MovieDetails = ({ match }: any) => {
@@ -32,8 +31,8 @@ export const MovieDetails = ({ match }: any) => {
             <LikeButton isLike={movie.isFavorite} onLikeClick={onLikeClick} />
             <img src={movie.img} />
             <h2>{movie.title}</h2>
-            <h3>{movie.director}</h3>
-            <h4>{movie.releaseDate}</h4>
+            <h3>Director: {movie.director}</h3>
+            <h4>Release Date: {movie.releaseDate}</h4>
             <p>{movie.details}</p>
         </section>
     )

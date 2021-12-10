@@ -5,6 +5,7 @@ import { AppHeader } from './cmp/AppHeader';
 import { SideBar } from './cmp/SideBar';
 import { UserMsg } from './cmp/UserMsg';
 import IFilter from './interface/IFilter.interface';
+import { Home } from './pages/Home';
 import { MovieDetails } from './pages/MovieDetails';
 import { eventBusService } from './services/event-bus.service';
 import { starwarsService } from './services/starwars.service';
@@ -44,6 +45,7 @@ function App() {
                 <MovieDetails {...props} loadMovies={loadMovies} authed={true} />
               )}
             />
+            <Route path='/' component={Home} />
           </Switch>
         </main>
         <AppFotter />

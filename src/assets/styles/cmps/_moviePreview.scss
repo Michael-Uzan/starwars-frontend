@@ -1,16 +1,30 @@
 .movie-preview {
     margin-bottom: 15px;
     a {
+        div {
+            margin-right: 15px;
+        }
+        font-size: rem(15px);
         margin-left: 25px;
-        font-size: rem(20px);
         &.active {
             color: $clr3;
         }
         display: flex;
-        justify-content: space-between;
         img {
             width: 25px;
             object-fit: contain;
+        }
+    }
+
+    @include for-normal-layout {
+        a {
+            justify-content: space-between;
+        }
+    }
+
+    @include for-wide-layout {
+        a {
+            font-size: rem(20px);
         }
     }
 }

@@ -10,21 +10,63 @@
         gap: 15px;
         margin-bottom: 15px;
         h1 {
-            font-size: rem(30px);
+            font-size: rem(22px);
             color: $clr1;
         }
     }
     img {
         width: 400px;
+        height: 650px;
     }
     .main-details {
         gap: 15px;
+        flex-direction: column;
+
         h3,
         h4 {
             margin-bottom: 15px;
         }
         p {
-            max-width: 800px;
+            font-size: rem(15px);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+    img {
+        width: 200px;
+        height: 250px;
+    }
+
+    @include for-narrow-layout {
+        .title {
+            h1 {
+                font-size: rem(30px);
+            }
+        }
+        p {
+            font-size: rem(17px);
+        }
+    }
+
+    @include for-normal-layout {
+        .main-details {
+            p {
+                margin-right: 25px;
+            }
+        }
+    }
+
+    @include for-wide-layout {
+        .main-details {
+            flex-direction: row;
+            p {
+                max-width: 800px;
+                font-size: rem(20px);
+            }
+        }
+        img {
+            width: 400px;
+            height: 650px;
         }
     }
 }

@@ -37,7 +37,7 @@ function App() {
       <Router>
         <UserMsg />
         <AppHeader onChangeFilter={onChangeFilter} />
-        <main className='main-content main-container' >
+        <main className='main-content' >
           <SideBar movies={movies} />
           <Switch>
             <Route path='/movie/:movieId'

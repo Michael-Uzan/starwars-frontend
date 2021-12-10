@@ -8,30 +8,60 @@
             margin-left: 25px;
             height: 45px;
             width: 200px;
+            object-fit: contain;
         }
     }
     form {
         margin-left: 25px;
         margin-bottom: 10px;
-        gap: 15px;
+        gap: 8px;
+        flex-direction: column;
         div {
+            .search {
+                width: 100px;
+                font-size: rem(10px);
+                height: 26px;
+            }
             label,
             input {
                 margin-right: 10px;
             }
+            label {
+                font-size: rem(12px);
+            }
         }
     }
-    nav {
-        gap: 10px;
-        padding: 15px;
+    @include for-narrow-layout {
+        form {
+            flex-direction: row;
+        }
     }
-    a.active {
-        color: red;
+    @include for-normal-layout {
+        form {
+            gap: 15px;
+            div {
+                label {
+                    font-size: rem(16px);
+                }
+                .search {
+                    width: 120px;
+                    font-size: rem(14px);
+                }
+            }
+        }
     }
-    img {
-        width: 35px;
-        object-fit: contain;
-        margin-right: 20px;
-        cursor: pointer;
+
+    @include for-wide-layout {
+        form {
+            div {
+                label {
+                    font-size: rem(19px);
+                }
+                .search {
+                    width: 200px;
+                    font-size: rem(16px);
+                }
+            }
+        }
     }
 }

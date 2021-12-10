@@ -15,7 +15,7 @@ export const SideBar = ({ movies }: PropType) => {
     return (
         <aside className="side-bar">
             <MovieList movies={movies} />
-            {!movies.length && <div>Sorry no results...</div>}
+            {!movies.length && <p className="no-results">Sorry no results...</p>}
         </aside>
     )
 }

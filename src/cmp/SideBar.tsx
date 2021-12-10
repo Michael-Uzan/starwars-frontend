@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import IMovie from '../interface/IMovie.interface';
-import { starwarsService } from '../services/starwars.service';
 import { MovieList } from './MovieList';
 import { Loading } from './Loading';
 

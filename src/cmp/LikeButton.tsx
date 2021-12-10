@@ -1,5 +1,4 @@
 import React from 'react'
-import IMovie from '../interface/IMovie.interface'
 import like from '../assets/imgs/like.png';
 import likeOn from '../assets/imgs/like-on.png';
 

@@ -60,15 +60,19 @@ function _getImg(title: string): string {
         case 'Attack of the Clones':
             return 'https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Attackoftheclones_novel.jpg/220px-Attackoftheclones_novel.jpg'
         case 'Revenge of the Sith':
-            return 'https://www.michigansportszone.com/wp-content/uploads/2021/10/Ep3DVD.jpg'
+            return 'https://i.ebayimg.com/images/g/J-cAAMXQMmJROYZf/s-l500.jpg'
         default:
             return 'https://images-na.ssl-images-amazon.com/images/I/81aA7hEEykL.jpg'
     }
 }
 
-async function getById(movieId: string): Promise<IMovie> {
-    const movie = await storageService.get(movieId, STARWARS_DB)
-    return movie
+async function getById(movieId: string): Promise<any> {
+    try {
+        const movie = await storageService.get(movieId, STARWARS_DB)
+        return movie
+    } catch (err) {
+        console.log('error get an item', err)
+    }
 }
 
 async function updateMovie(movie: IMovie): Promise<IMovie> {

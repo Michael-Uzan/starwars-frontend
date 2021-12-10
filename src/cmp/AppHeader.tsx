@@ -18,8 +18,8 @@ export const AppHeader = ({ onChangeFilter }: any) => {
     return (
         <header className=" main-header full flex direction-col ">
             <div className="top-header flex">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png" />
-                <h1>Star Wars</h1>
+                <img src="https://logodownload.org/wp-content/uploads/2015/12/star-wars-logo.png" />
+                {/* <h1>Star Wars</h1> */}
             </div>
             <form className="filter flex align-center direction-row ">
                 <div className='flex'>
@@ -27,9 +27,8 @@ export const AppHeader = ({ onChangeFilter }: any) => {
                     <input value={txt} type="text" id="txt" name="txt" onChange={handleChange} placeholder='Search movie' />
                 </div>
                 <div>
-                    <label htmlFor="isFavorite">Only favorite
-                        <input value={isFavorite} type="checkbox" id="isFavorite" name="isFavorite" onChange={handleChange} />
-                    </label>
+                    <input value={isFavorite} type="checkbox" id="isFavorite" name="isFavorite" onChange={handleChange} />
+                    <label htmlFor="isFavorite">Only favorite</label>
                 </div>
             </form>
         </header>

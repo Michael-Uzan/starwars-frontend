@@ -5,7 +5,7 @@ export function AppFotter() {
         <footer className="main-footer full">
             <div className="footer-logo flex direction-col align-center">
                 <p>&copy; Star Wars by Michael Uzan</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png" />
+                <img src="https://www.citypng.com/public/uploads/preview/-51608495204iyvpoqgita.png" />
             </div>
             <div className="footer-desc">
                 <ul className="social-links clean-list flex direction-row justify-center">

@@ -10,13 +10,15 @@ body {
 
 html,
 input,
-select,
-textarea {
+select {
     font-family: SourceSansPro-Black, sans-serif;
     color: $fontColor;
     font-weight: 600;
     background-color: $clr1;
     border: none;
+}
+input {
+    color: $clr4;
 }
 
 img {
@@ -32,6 +34,16 @@ h6 {
     margin: 0 0 rem(8px);
 }
 
+h3 {
+    font-size: rem(22px);
+}
+h4 {
+    font-size: rem(20px);
+}
+p {
+    font-size: rem(18px);
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -44,6 +56,7 @@ a {
 
 ::selection {
     color: $clr2;
+    background-color: $clr1;
 }
 
 input:focus-visible,

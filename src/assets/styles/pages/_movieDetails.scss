@@ -1,5 +1,30 @@
 .movie-details {
+    margin-bottom: 25px;
+    h1,
+    h3,
+    h3,
+    p {
+        background-color: $bgcColorOpacity;
+    }
+    .title {
+        gap: 15px;
+        margin-bottom: 15px;
+        h1 {
+            font-size: rem(30px);
+            color: $clr1;
+        }
+    }
     img {
         width: 400px;
+    }
+    .main-details {
+        gap: 15px;
+        h3,
+        h4 {
+            margin-bottom: 15px;
+        }
+        p {
+            max-width: 800px;
+        }
     }
 }

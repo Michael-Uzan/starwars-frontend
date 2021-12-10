@@ -33,11 +33,11 @@ function App() {
   }
 
   return (
-    <div className="main-app main-container">
+    <div className="main-app">
       <Router>
         <UserMsg />
         <AppHeader onChangeFilter={onChangeFilter} />
-        <main className='main-content' >
+        <main className='main-content main-container' >
           <SideBar movies={movies} />
           <Switch>
             <Route path='/movie/:movieId'

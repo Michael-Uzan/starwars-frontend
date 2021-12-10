@@ -1,7 +1,9 @@
 .movie-preview {
     margin-bottom: 15px;
     a {
-        .active {
+        margin-left: 25px;
+        font-size: rem(20px);
+        &.active {
             color: $clr3;
         }
         display: flex;

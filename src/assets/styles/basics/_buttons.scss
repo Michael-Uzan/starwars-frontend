@@ -3,7 +3,8 @@ button {
     border: none;
     border-radius: 3px;
     padding: 0;
+    background-color: black;
     &:hover {
-        background-color: #fff;
+        opacity: 0.8;
     }
 }

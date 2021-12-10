@@ -18,7 +18,6 @@ function App() {
   useEffect(() => {
     eventBusService.showSuccessMsg('Welcome!!!')
     loadMovies()
-    console.log('init')
   }, [])
 
   const loadMovies = async () => {

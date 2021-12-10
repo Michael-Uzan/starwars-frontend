@@ -14,7 +14,6 @@ export const MovieDetails = ({ match, loadMovies, history }: any) => {
     const loadMovie = async () => {
         const { movieId } = match.params;
         const movie = await starwarsService.getById(movieId)
-        console.log('movie', movie)
         if (movie) setMovie(movie)
         else history.push('/')
     };

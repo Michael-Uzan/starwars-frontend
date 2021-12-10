@@ -15,7 +15,6 @@ async function query(entityType: string, delay = 200): Promise<any> {
 async function get(entityId: string, entityType: string): Promise<IMovie> {
     const entities = await query(entityType)
     const entity = entities.find((entity: any) => entity?._id === entityId)
-    console.log('entity', entity)
     if (!entity) throw new Error(`Cannot get, Item ${entityId} of type: ${entityType} does not exist`)
     return entity;
 }

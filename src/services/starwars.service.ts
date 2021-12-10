@@ -18,7 +18,6 @@ const STARWARS_API: string = 'https://swapi.dev/api/films/'
 async function getMovies(filterBy: IFilter): Promise<IMovie[]> {
     const movies = await storageService.query(STARWARS_DB) || await _getMoviesAPI()
     let moviesToShow = JSON.parse(JSON.stringify(movies))
-    console.log('filterBy', filterBy)
     if (filterBy) {
         const { isFavorite, txt } = filterBy
         const regex = new RegExp(txt, "i");
@@ -35,7 +34,7 @@ async function _getMoviesAPI(): Promise<IMovie[]> {
     const movies = res.data.results.map((result: any) => {
         return {
             _id: utilService.makeId(),
-            isFavorite: false,
+            isFavorite: (Math.random() < 0.5),
             title: result.title,
             director: result.director,
             releaseDate: result.release_date,
@@ -45,6 +44,20 @@ async function _getMoviesAPI(): Promise<IMovie[]> {
     })
     localStorageService.save(STARWARS_DB, movies)
     return movies
+}
+
+async function getById(movieId: string): Promise<any> {
+    try {
+        const movie = await storageService.get(movieId, STARWARS_DB)
+        return movie
+    } catch (err) {
+        console.log('error get an item', err)
+    }
+}
+
+async function updateMovie(movie: IMovie): Promise<IMovie> {
+    const updatedMovie = await storageService.put(movie, STARWARS_DB)
+    return updatedMovie
 }
 
 function _getImg(title: string): string {
@@ -64,18 +77,4 @@ function _getImg(title: string): string {
         default:
             return 'https://images-na.ssl-images-amazon.com/images/I/81aA7hEEykL.jpg'
     }
-}
-
-async function getById(movieId: string): Promise<any> {
-    try {
-        const movie = await storageService.get(movieId, STARWARS_DB)
-        return movie
-    } catch (err) {
-        console.log('error get an item', err)
-    }
-}
-
-async function updateMovie(movie: IMovie): Promise<IMovie> {
-    const updatedMovie = await storageService.put(movie, STARWARS_DB)
-    return updatedMovie
 }
